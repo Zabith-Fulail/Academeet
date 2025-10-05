@@ -1,0 +1,9 @@
+-keep class io.flutter.app.** { *; }
+-keep class io.flutter.plugin.** { *; }
+-keep class io.flutter.embedding.** { *; }
+-keep class io.flutter.view.** { *; }
+-keep class io.flutter.** { *; }
+-keep class com.google.firebase.** { *; }
+-keep class com.google.gson.** { *; }
+-keep class androidx.lifecycle.** { *; }
+-dontwarn io.flutter.embedding.**

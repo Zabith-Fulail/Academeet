@@ -1,0 +1,126 @@
+Design features for the Student app (what it should eventually do).
+
+Simulate/mock data locally so you can continue building the UI and flows without waiting for backend.
+
+Keep your architecture clean so swapping to real API later will be smooth.
+
+Here’s a structured feature + development guide for the Student App:
+
+🎯 Core Features for Student App (Phase 1 – Without Backend)
+
+You can simulate these with local JSON files, dummy lists, or mock services.
+
+1. Authentication (simulated)
+
+Screens: Login, Signup, Forgot Password.
+
+For now → just check against a dummy hardcoded list or local JSON.
+
+Later → integrate Firebase/Auth backend.
+
+2. Browse Tutors
+
+Screen: Tutor List + Tutor Profile.
+
+Show tutor cards with photo, subjects, rating, availability.
+
+Use mock data (JSON file or Dart list). Example:
+
+[
+  {"id": 1, "name": "John Doe", "subject": "Math", "rating": 4.8},
+  {"id": 2, "name": "Sarah Lee", "subject": "Physics", "rating": 4.5}
+]
+
+3. Search & Filter Tutors
+
+Filter by subject, availability, price, rating.
+
+Implement using list filtering in local state.
+
+4. Booking a Session
+
+Screens: Select Tutor → Select Date/Time → Confirm.
+
+Simulate booking by storing in local storage (SharedPreferences / Hive).
+
+Later → connect to backend scheduling API.
+
+5. Session Management
+
+Upcoming Sessions tab.
+
+Past Sessions/History tab.
+
+Store locally → so you can see “dummy booked sessions”.
+
+6. Chat/Communication (Simulated)
+
+Add a simple chat UI with dummy data (like WhatsApp style).
+
+Later integrate with real-time backend (Firebase/Socket).
+
+7. Payment Flow (Mock)
+
+Show “Choose payment method” and simulate success/failure.
+
+Later integrate with Stripe/PayPal API.
+
+8. Profile & Settings
+
+Student profile (Name, Email, Subjects of interest).
+
+App settings (notifications, theme, logout).
+
+⚙️ How to Simulate Locally (No Backend Yet)
+
+You’ll need a mock layer in your project:
+
+Mock Data Source
+
+Store JSON files in /assets/mock/ or create static lists.
+
+Example: tutors.json, bookings.json.
+
+Repository Pattern
+
+Define repositories like TutorRepository, BookingRepository.
+
+For now → return data from mock JSON.
+
+Later → swap to API calls (Dio/Retrofit).
+
+Local Persistence
+
+Use Hive or SharedPreferences to store mock bookings, chat messages, session history.
+
+Dummy States
+
+Example: when booking a tutor → add a booking to local state, display in “Upcoming Sessions”.
+
+📌 Development Order (Recommended)
+
+So you don’t get stuck:
+
+Authentication UI (dummy login)
+
+Home Dashboard (search tutors, popular tutors)
+
+Tutor List + Profile Screen
+
+Booking Flow (select time, confirm)
+
+Upcoming/History Sessions
+
+Chat Screen (static messages)
+
+Profile & Settings
+
+Payment Mock Flow
+
+🚀 What This Gives You
+
+A fully working student app prototype (with dummy data).
+
+You can test all user journeys locally.
+
+Once backend APIs are live → just replace mock repositories with API repositories.
