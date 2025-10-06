@@ -124,6 +124,16 @@ class _OtpVerifyViewState extends State<OtpVerifyView> {
                                     focusNode: _otpFocusNode,
                                     defaultPinTheme: defaultPinTheme,
                                     keyboardType: TextInputType.number,
+                                    focusedPinTheme: defaultPinTheme.copyWith(
+                                      decoration: defaultPinTheme.decoration!.copyWith(
+                                        border: Border.all(color: colors(context).buttonPrimaryColor!),
+                                      ),
+                                    ),
+                                    submittedPinTheme: defaultPinTheme.copyWith(
+                                      decoration: defaultPinTheme.decoration!.copyWith(
+                                        color: colors(context).buttonPrimaryColor,
+                                      ),
+                                    ),
                                     inputFormatters: [
                                       FilteringTextInputFormatter.digitsOnly,
                                     ],
