@@ -9,7 +9,7 @@ import '../features/presentation/views/activities/activities_view.dart';
 import '../features/presentation/views/change_appointment/change_appointment_view.dart';
 import '../features/presentation/views/home/gender_selection_view.dart';
 import '../features/presentation/views/home/main_navigation_view.dart';
-import '../features/presentation/views/home/student_home_screen.dart';
+import '../features/presentation/views/home/home_screen_dashboard.dart';
 import '../features/presentation/views/notifications/notification_view.dart';
 import '../features/presentation/views/otp_verification/data/otp_verify_view_args.dart';
 import '../features/presentation/views/otp_verification/otp_verify_view.dart';
@@ -85,7 +85,7 @@ class Routes {
       case kNotificationView:
         return _slideTransition(NotificationView(), kNotificationView);
       case kStudentHomeScreen:
-        return _slideTransition(StudentHomeScreen(), kStudentHomeScreen);
+        return _slideTransition(HomeScreen(), kStudentHomeScreen);
       case kUserProfileEditView:
         return _slideTransition(
           UserProfileEditView(
