@@ -139,7 +139,7 @@ class _LogInViewState extends State<LogInView> {
 
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
-                                      Navigator.pushNamed(context, Routes.kSignUpView);
+                                      // Navigator.pushNamed(context, Routes.kSignUpView);
                                     },
                                 ),
                               ],
