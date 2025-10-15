@@ -1,47 +1,52 @@
 [
   {
-    "id": 1,
-    "name": "John Doe",
-    "subject": "Mathematics",
+    "id": 101,
+    "name": "Dr. Alex Johnson",
+    "subjects": "Physics, Calculus",
     "rating": 4.9,
-    "price": 15,
-    "image": "assets/dark/png/iconBook.png",
-    "isPopular": true
+    "price_per_hour": 35,
+    "total_sessions": 1200,
+    "image_path": "assets/dark/png/tutor_male.png",
+    "is_top_rated": true
   },
   {
-    "id": 2,
-    "name": "Sarah Lee",
-    "subject": "Physics",
-    "rating": 4.7,
-    "price": 20,
-    "image": "assets/dark/png/iconBook.png",
-    "isPopular": true
+    "id": 102,
+    "name": "Ms. Sarah Chen",
+    "subjects": "Organic Chemistry",
+    "rating": 4.8,
+    "price_per_hour": 40,
+    "total_sessions": 850,
+    "image_path": "assets/dark/png/tutor_female.png",
+    "is_top_rated": true
   },
   {
-    "id": 3,
-    "name": "Ahmed Khan",
-    "subject": "English",
+    "id": 103,
+    "name": "Mr. Kevin Lee",
+    "subjects": "Computer Science, Python",
+    "rating": 5.0,
+    "price_per_hour": 30,
+    "total_sessions": 500,
+    "image_path": "assets/dark/png/tutor_male.png",
+    "is_top_rated": true
+  },
+  {
+    "id": 104,
+    "name": "Dr. Maya Varma",
+    "subjects": "Modern History",
     "rating": 4.5,
-    "price": 12,
-    "image": "assets/dark/png/iconBook.png",
-    "isPopular": false
+    "price_per_hour": 25,
+    "total_sessions": 320,
+    "image_path": "assets/dark/png/tutor_male.png",
+    "is_top_rated": false
   },
   {
-    "id": 4,
-    "name": "Ahmed Khan",
-    "subject": "English",
-    "rating": 4.5,
-    "price": 12,
-    "image": "assets/dark/png/iconBook.png",
-    "isPopular": false
-  },
-  {
-    "id": 5,
-    "name": "Ahmed Khan",
-    "subject": "English",
-    "rating": 4.5,
-    "price": 12,
-    "image": "assets/dark/png/iconBook.png",
-    "isPopular": false
+    "id": 105,
+    "name": "Ben Carter",
+    "subjects": "English Literature",
+    "rating": 4.6,
+    "price_per_hour": 20,
+    "total_sessions": 450,
+    "image_path": "assets/dark/png/tutor_male_3.png",
+    "is_top_rated": false
   }
 ]
