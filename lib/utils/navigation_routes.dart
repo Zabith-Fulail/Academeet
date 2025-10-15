@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../features/presentation/views/academeet/book_appointment_view.dart';
-import '../features/presentation/views/academeet/booking_date_time_view.dart';
-import '../features/presentation/views/academeet/booking_success_view.dart';
-import '../features/presentation/views/academeet/payment_view.dart';
-import '../features/presentation/views/academeet/academeet_view.dart';
-import '../features/presentation/views/activities/activities_view.dart';
-import '../features/presentation/views/change_appointment/change_appointment_view.dart';
-import '../features/presentation/views/home/gender_selection_view.dart';
-import '../features/presentation/views/home/main_navigation_view.dart';
+import '../features/presentation/views/booking/book_tutor_screen.dart';
+import '../features/presentation/views/booking/booking_date_time_view.dart';
+import '../features/presentation/views/booking/booking_success_view.dart';
+import '../features/presentation/views/booking/payment_view.dart';
+import '../features/presentation/views/booking/select_subject_category.dart';
 import '../features/presentation/views/home/home_screen_dashboard.dart';
-import '../features/presentation/views/notifications/notification_view.dart';
 import '../features/presentation/views/otp_verification/data/otp_verify_view_args.dart';
 import '../features/presentation/views/otp_verification/otp_verify_view.dart';
 import '../features/presentation/views/sign_in/log_in_view.dart';
 import '../features/presentation/views/sign_up/mobile_number_view.dart';
 import '../features/presentation/views/sign_up/sign_up_view.dart';
 import '../features/presentation/views/splash_screen/splash_screen.dart';
-import '../features/presentation/views/user_profile/user_profile_edit_view.dart';
-import '../features/presentation/views/user_profile/user_profile_view.dart';
+import '../features/presentation/views/tutor/tutor_details_screen.dart';
 
 class Routes {
   static const String kSplashView = 'kSplashView';
@@ -26,19 +20,13 @@ class Routes {
   static const String kSignUpView = 'kSignUpView';
   static const String kMobileNumberView = 'kMobileNumberView';
   static const String kOtpVerifyView = 'kOtpVerifyView';
-  static const String kHomeDashboard = 'kHomeDashboard';
-  static const String kAcademeetView = 'kAcademeet';
-  static const String kBookAppointmentView = 'kBookAppointmentView';
+  static const String kBookTutorScreen = 'kBookTutorScreen';
   static const String kBookingDateTimeView = 'kBookingDateTimeView';
   static const String kPaymentView = 'kPaymentView';
   static const String kBookingSuccessView = 'kBookingSuccessView';
-  static const String kUserProfileView = 'kUserProfileView';
-  static const String kUserProfileEditView = 'kUserProfileEditView';
-  static const String kActivitiesView = 'kActivitiesView';
-  static const String kGenderSelectionView = 'kGenderSelectionView';
-  static const String kChangeAppointmentView = 'kChangeAppointmentView';
-  static const String kNotificationView = 'kNotificationView';
   static const String kStudentHomeScreen = 'kStudentHomeScreen';
+  static const String kTutorDetailScreen = 'kTutorDetailScreen';
+  static const String kSelectSubjectCategory = 'kSelectSubjectCategory';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -49,7 +37,6 @@ class Routes {
           builder: (_) => LogInView(),
           settings: const RouteSettings(name: kLogInView),
         );
-      // return _slideTransition(const SignInView(), kSignInView);
       case kSignUpView:
         return _slideTransition(const SignUpView(), kSignUpView);
       case kMobileNumberView:
@@ -61,41 +48,23 @@ class Routes {
           ),
           kOtpVerifyView,
         );
-      case kHomeDashboard:
-        return _slideTransition(const MainNavigation(), kHomeDashboard);
-      case kAcademeetView:
-        return _slideTransition(const AcadeMeetView(), kAcademeetView);
-      case kBookAppointmentView:
-        return _slideTransition(BookAppointmentView(), kBookAppointmentView);
+      case kBookTutorScreen:
+        return _slideTransition(BookTutorScreen(), kBookTutorScreen);
       case kBookingDateTimeView:
         return _slideTransition(BookingDateTimeView(), kBookingDateTimeView);
       case kPaymentView:
         return _slideTransition(PaymentView(), kPaymentView);
       case kBookingSuccessView:
         return _slideTransition(BookingSuccessView(), kBookingSuccessView);
-      case kUserProfileView:
-        return _slideTransition(UserProfileView(), kUserProfileView);
-      case kGenderSelectionView:
-        return _slideTransition(GenderSelectionView(), kGenderSelectionView);
-      case kChangeAppointmentView:
-        return _slideTransition(
-          ChangeAppointmentView(),
-          kChangeAppointmentView,
-        );
-      case kNotificationView:
-        return _slideTransition(NotificationView(), kNotificationView);
       case kStudentHomeScreen:
         return _slideTransition(HomeScreen(), kStudentHomeScreen);
-      case kUserProfileEditView:
+        case kSelectSubjectCategory:
+        return _slideTransition(SelectSubjectCategoryView(), kSelectSubjectCategory);
+      case kTutorDetailScreen:
         return _slideTransition(
-          UserProfileEditView(
-            userProfileEditViewArgs:
-                settings.arguments as UserProfileEditViewArgs,
-          ),
-          kUserProfileEditView,
+          TutorDetailScreen(tutor: settings.arguments as Tutor),
+          kTutorDetailScreen,
         );
-      case kActivitiesView:
-        return _slideTransition(ActivitiesView(), kActivitiesView);
       default:
         return _slideTransition(
           Scaffold(
