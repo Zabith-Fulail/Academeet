@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../features/presentation/views/booking/book_tutor_screen.dart';
 import '../features/presentation/views/booking/booking_date_time_view.dart';
 import '../features/presentation/views/booking/booking_success_view.dart';
+import '../features/presentation/views/booking/language_selection_view.dart';
 import '../features/presentation/views/booking/payment_view.dart';
 import '../features/presentation/views/booking/select_subject_category.dart';
 import '../features/presentation/views/home/home_screen_dashboard.dart';
@@ -27,6 +28,7 @@ class Routes {
   static const String kStudentHomeScreen = 'kStudentHomeScreen';
   static const String kTutorDetailScreen = 'kTutorDetailScreen';
   static const String kSelectSubjectCategory = 'kSelectSubjectCategory';
+  static const String kLanguageSelectionView = 'kLanguageSelectionView';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -58,12 +60,20 @@ class Routes {
         return _slideTransition(BookingSuccessView(), kBookingSuccessView);
       case kStudentHomeScreen:
         return _slideTransition(HomeScreen(), kStudentHomeScreen);
-        case kSelectSubjectCategory:
-        return _slideTransition(SelectSubjectCategoryView(), kSelectSubjectCategory);
+      case kSelectSubjectCategory:
+        return _slideTransition(
+          SelectSubjectCategoryView(),
+          kSelectSubjectCategory,
+        );
       case kTutorDetailScreen:
         return _slideTransition(
           TutorDetailScreen(tutor: settings.arguments as Tutor),
           kTutorDetailScreen,
+        );
+      case kLanguageSelectionView:
+        return _slideTransition(
+          LanguageSelectionView(),
+          kLanguageSelectionView,
         );
       default:
         return _slideTransition(

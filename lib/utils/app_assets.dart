@@ -50,6 +50,7 @@ class AppAssets {
   ///PNG
   static String get mainMenuBackground => '${kPNGImagePath}mainMenuBackground$kPngType';
   static String get splashIcon => '${kPNGImagePath}splashIcon$kPngType';
+  static String get icGlobe => '${kPNGImagePath}icGlobe$kPngType';
   static String get iconBook => '${kPNGImagePath}iconBook$kPngType';
 
   ///WEBP

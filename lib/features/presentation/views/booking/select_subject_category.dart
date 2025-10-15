@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../utils/app_enum.dart';
 import '../../../../utils/navigation_routes.dart';
 import '../../widget/primary_app_button.dart';
+import '../../widget/selection_chip_button.dart';
 
 class SelectSubjectCategoryView extends StatefulWidget {
   const SelectSubjectCategoryView({super.key});
@@ -67,6 +68,10 @@ class _SelectSubjectCategoryViewState extends State<SelectSubjectCategoryView> {
                         selectedSubject = val;
                         setState(() {});
                       },
+                    ),
+                    SelectionChipButton(
+                      onTap: () {},
+                      label: "Add More Subjects",
                     ),
                   ],
                 ),
