@@ -6,16 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../utils/app_constants.dart';
 
-// --- Placeholder Classes for AppConstants and TextStyles ---
-// NOTE: I'm defining minimal versions here to make the example runnable.
-// You should ensure these align with your actual files.
-// Assume AppConstants.user.username = 'Naurez'
-class _User {
-  final String username;
-
-  const _User(this.username);
-}
-// -----------------------------------------------------------
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
