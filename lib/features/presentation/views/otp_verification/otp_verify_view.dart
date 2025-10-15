@@ -51,11 +51,11 @@ class _OtpVerifyViewState extends State<OtpVerifyView> {
         listener: (context, state) {
           if (state is VerifyOtpSuccessState) {
             // OTP Sent Successfully
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              Routes.kGenderSelectionView,
-                  (route) => false,
-            );
+            // Navigator.pushNamedAndRemoveUntil(
+            //   context,
+            //   Routes.kGenderSelectionView,
+            //       (route) => false,
+            // );
           } else if (state is VerifyOtpFailedState) {
             // Show error message
             showDialog(
