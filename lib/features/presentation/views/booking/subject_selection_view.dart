@@ -1,5 +1,3 @@
-import 'package:academeet/features/presentation/views/booking/subject_selection_view.dart';
-import 'package:academeet/utils/navigation_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,24 +6,35 @@ import '../../../../core/theme/theme_data.dart';
 import '../../../../utils/app_assets.dart';
 import '../../widget/selection_chip_button.dart';
 import 'language_selection_view.dart';
+import 'level_selection_view.dart';
 
-class LevelSelectionView extends StatefulWidget {
+class SubjectSelectionViewArgs {
   final LanguageEntity selectedLanguage;
+  final LevelEntity selectedLevel;
 
-  const LevelSelectionView({super.key, required this.selectedLanguage});
-
-  @override
-  State<LevelSelectionView> createState() => _LevelSelectionViewState();
+  SubjectSelectionViewArgs({
+    required this.selectedLanguage,
+    required this.selectedLevel,
+  });
 }
 
-class _LevelSelectionViewState extends State<LevelSelectionView> {
-  List<LevelEntity> languages = [
-    LevelEntity(name: "O/L", code: "1"),
-    LevelEntity(name: "A/L", code: "2"),
-    LevelEntity(name: "Diplomas", code: "3"),
-    LevelEntity(name: "Diplomas", code: "3"),
+class SubjectSelectionView extends StatefulWidget {
+  final SubjectSelectionViewArgs subjectSelectionViewArgs;
+
+  const SubjectSelectionView({super.key, required this.subjectSelectionViewArgs});
+
+  @override
+  State<SubjectSelectionView> createState() => _SubjectSelectionViewState();
+}
+
+class _SubjectSelectionViewState extends State<SubjectSelectionView> {
+  List<SubjectEntity> languages = [
+    SubjectEntity(name: "Maths", code: "1"),
+    SubjectEntity(name: "Science", code: "2"),
+    SubjectEntity(name: "ICT", code: "3"),
+    SubjectEntity(name: "History", code: "4"),
   ];
-  LevelEntity? selectedLanguage;
+  SubjectEntity? selectedLanguage;
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +56,13 @@ class _LevelSelectionViewState extends State<LevelSelectionView> {
             child: Row(
               children: [
                 Text(
-                  "Select Level",
+                  "Select Subject",
                   style: size20weight700.copyWith(
                     color: colors(context).whiteColor,
                   ),
                 ),
                 8.horizontalSpace,
-                Image.asset(AppAssets.icGraduationCap, width: 48, height: 48),
+                Image.asset(AppAssets.icBook, width: 48, height: 48),
               ],
             ),
           ),
@@ -67,12 +76,7 @@ class _LevelSelectionViewState extends State<LevelSelectionView> {
                   label: languages[index].name,
                   onTap: () {
                     selectedLanguage = languages[index];
-                    setState(() {
-                      Navigator.pushNamed(context, Routes.kSubjectSelectionView, arguments: SubjectSelectionViewArgs(
-                        selectedLanguage: widget.selectedLanguage,
-                        selectedLevel: selectedLanguage!
-                      ));
-                    });
+                    setState(() {});
                   },
                 );
               },
@@ -84,9 +88,9 @@ class _LevelSelectionViewState extends State<LevelSelectionView> {
   }
 }
 
-class LevelEntity {
+class SubjectEntity {
   final String name;
   final String code;
 
-  LevelEntity({required this.name, required this.code});
+  SubjectEntity({required this.name, required this.code});
 }
