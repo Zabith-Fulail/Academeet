@@ -1,6 +1,7 @@
 import 'package:academeet/core/theme/text_styles.dart';
 import 'package:academeet/core/theme/theme_data.dart';
 import 'package:academeet/utils/app_assets.dart';
+import 'package:academeet/utils/navigation_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -50,6 +51,7 @@ class _LanguageSelectionViewState extends State<LanguageSelectionView> {
                 onTap: (){
                   selectedLanguage = languages[index];
                   setState(() {});
+                  Navigator.pushNamed(context, Routes.kLevelSelectionView,arguments: selectedLanguage);
                 },
               );
             }),
