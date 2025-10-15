@@ -1,16 +1,15 @@
 import 'package:academeet/core/theme/text_styles.dart';
 import 'package:academeet/core/theme/theme_data.dart';
+import 'package:academeet/utils/navigation_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../utils/app_constants.dart';
 
 // --- Placeholder Classes for AppConstants and TextStyles ---
 // NOTE: I'm defining minimal versions here to make the example runnable.
 // You should ensure these align with your actual files.
 // Assume AppConstants.user.username = 'Naurez'
-class AppConstants {
-  static const user = _User('Naurez');
-}
-
 class _User {
   final String username;
 
@@ -142,7 +141,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 16.h),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.kSelectSubjectCategory);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFC7FF85),
                       // The light green color
