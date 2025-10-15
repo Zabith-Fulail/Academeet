@@ -20,20 +20,22 @@ class SelectionChipButton extends StatefulWidget {
 class _SelectionChipButtonState extends State<SelectionChipButton> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: widget.onTap,
-
-      child: Container(
-        width: double.maxFinite,
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16).w,
-        margin: EdgeInsets.fromLTRB(16,0,16,12).w,
-        decoration: BoxDecoration(
-          color: Color(0xFF2A2935),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Text(
-          widget.label,
-          style: size14weight400.copyWith(color: colors(context).whiteColor),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16,0,16,12).w,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(6),
+        onTap: widget.onTap,
+        child: Container(
+          width: double.maxFinite,
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16).w,
+          decoration: BoxDecoration(
+            color: Color(0xFF2A2935),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Text(
+            widget.label,
+            style: size14weight400.copyWith(color: colors(context).whiteColor),
+          ),
         ),
       ),
     );

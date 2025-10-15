@@ -4,6 +4,7 @@ import '../features/presentation/views/booking/book_tutor_screen.dart';
 import '../features/presentation/views/booking/booking_date_time_view.dart';
 import '../features/presentation/views/booking/booking_success_view.dart';
 import '../features/presentation/views/booking/language_selection_view.dart';
+import '../features/presentation/views/booking/level_selection_view.dart';
 import '../features/presentation/views/booking/payment_view.dart';
 import '../features/presentation/views/booking/select_subject_category.dart';
 import '../features/presentation/views/home/home_screen_dashboard.dart';
@@ -27,6 +28,7 @@ class Routes {
   static const String kBookingSuccessView = 'kBookingSuccessView';
   static const String kStudentHomeScreen = 'kStudentHomeScreen';
   static const String kTutorDetailScreen = 'kTutorDetailScreen';
+  static const String kLevelSelectionView = 'kLevelSelectionView';
   static const String kSelectSubjectCategory = 'kSelectSubjectCategory';
   static const String kLanguageSelectionView = 'kLanguageSelectionView';
 
@@ -74,6 +76,13 @@ class Routes {
         return _slideTransition(
           LanguageSelectionView(),
           kLanguageSelectionView,
+        );
+        case kLevelSelectionView:
+        return _slideTransition(
+          LevelSelectionView(
+            selectedLanguage: settings.arguments as LanguageEntity,
+          ),
+          kLevelSelectionView,
         );
       default:
         return _slideTransition(
