@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
           margin: EdgeInsets.only(top: 22.h),
           height: 140.h,
           decoration: BoxDecoration(
-            color: Color(0xFF2A2935), // Dark gray card background
+            color: const Color(0xFF2A2935), // Dark gray card background
             borderRadius: BorderRadius.circular(16.r),
           ),
         ),
@@ -294,7 +294,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         padding: EdgeInsets.all(16.w),
         decoration: BoxDecoration(
-          color: Color(0xFF2A2935),
+          color: const Color(0xFF2A2935),
           borderRadius: BorderRadius.circular(16.r),
         ),
         child: Row(
@@ -374,8 +374,20 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // 2. Placeholder Icons (Inactive)
-          _buildInactiveIcon(context, Icons.bookmark_border),
+          // 2. UPDATED CALENDAR ICON (TAPPABLE)
+          IconButton(
+            onPressed: () {
+              // Navigate to the desired route when tapped
+              Navigator.pushNamed(context, Routes.kLanguageSelectionView);
+            },
+            icon: Icon(
+              Icons.calendar_today_outlined,
+              color: colors(context).whiteColor!.withValues(alpha: 0.4),
+              size: 24.w,
+            ),
+          ),
+
+          // 3. Other Placeholder Icons (Inactive)
           _buildInactiveIcon(context, Icons.search),
           _buildInactiveIcon(context, Icons.chat_bubble_outline),
           _buildInactiveIcon(context, Icons.person_outline),
@@ -383,11 +395,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-// Note: Use the same _buildInactiveIcon helper function from Option 1
+
+  // Helper for other inactive icons that don't need a tap action yet
   Widget _buildInactiveIcon(BuildContext context, IconData icon) {
     return Icon(
       icon,
-      color: colors(context).whiteColor!.withValues(alpha: 0.4), // Use withOpacity for simplicity
+      color: colors(context).whiteColor!.withValues(alpha: 0.4),
       size: 24.w,
     );
   }

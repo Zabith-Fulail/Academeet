@@ -9,7 +9,7 @@ class MainColors {
 
 
   // Blue Colors
-  Color darkGreen = Color(0xFF9DDB81);
+  Color darkGreen = Color(0xFFC6FFA7);
 
 
   // Gray Colors
