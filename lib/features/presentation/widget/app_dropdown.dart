@@ -1,3 +1,4 @@
+import 'package:academeet/core/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/theme_data.dart';
@@ -87,7 +88,7 @@ class _AppDropdownState<T> extends State<AppDropdown<T>> {
                         return Column(
                           children: [
                             ListTile(
-                              title: Text(widget.itemToString(item)),
+                              title: Text(widget.itemToString(item),style: size16weight700.copyWith(color: colors(context).blackColor),),
                               onTap: () {
                                 widget.onChanged(item);
                                 _removeDropdown();
@@ -145,9 +146,15 @@ class _AppDropdownState<T> extends State<AppDropdown<T>> {
           isEmpty: widget.selectedItem == null,
           isFocused: _isOpen,
           decoration: InputDecoration(
+            enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8),borderSide: BorderSide(color: colors(context).darkGreen!)),
             labelText: widget.labelText,
+            labelStyle: TextStyle(
+              color:  colors(context).darkGreen,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+            ),
             hintText: widget.hintText,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8),borderSide: BorderSide(color: colors(context).darkGreen!)),
             contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
           ),
           child: Row(
@@ -159,7 +166,7 @@ class _AppDropdownState<T> extends State<AppDropdown<T>> {
                     : '',
                 style: TextStyle(
                   color: widget.selectedItem != null
-                      ? Colors.black
+                      ? colors(context).whiteColor
                       : Theme.of(context).hintColor,
                   fontWeight: widget.selectedItem != null
                       ? FontWeight.w700
