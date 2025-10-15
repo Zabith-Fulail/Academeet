@@ -50,7 +50,8 @@ class PrimaryAppButton extends StatelessWidget {
   Color getButtonColor(context, buttonType) {
     switch (buttonType) {
       case ButtonType.Primary:
-        return colors(context).buttonPrimaryColor!;
+        return Color(0xFFC7FF85);
+        // return colors(context).buttonPrimaryColor!;
       case ButtonType.Secondary:
         return colors(context).buttonPrimaryColor!;
       case ButtonType.Outline:
